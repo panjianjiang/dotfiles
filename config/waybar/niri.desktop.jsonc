@@ -1,0 +1,24 @@
+{
+  // 1. 差异提取：只 include 一次全局模块
+  "include": ["~/.config/waybar/modules.jsonc"],
+  
+  "layer": "top",
+  "position": "top",
+  "exclusive": true,
+  "spacing": 0,
+
+  // 2. 统一布局：外屏找不到 backlight 会自动消失，实现“一份配置，自动适配”
+  "modules-left": ["niri/window"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "backlight", 
+    "pulseaudio", 
+    "network", 
+    "cpu", 
+    "memory", 
+    "temperature", 
+    "battery", 
+    "tray", 
+    "custom/power"
+  ]
+}

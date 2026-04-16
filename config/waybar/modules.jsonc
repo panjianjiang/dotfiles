@@ -1,0 +1,61 @@
+{
+  "niri/workspaces": {
+    "disable-scroll": true,
+    "format": "{name}",
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    }
+  },
+  "niri/window": {
+    "format": "{title}",
+    "max-length": 50,
+    "separate-outputs": true
+  },
+  "tray": { "icon-size": 17, "spacing": 4 },
+  "clock": {
+    "format": "🕑 {:%Y-%m-%d %H:%M}",
+    "format-alt": "📅 {:%a}  {:%H:%M:%S}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "network": {
+    "format-wifi": "🛜 {essid}",
+    "format-ethernet": "🔗 {ipaddr}/{cidr}",
+    "format-disconnected": "🚫 网络断开",
+    "interval": 5,
+    "on-click": "uwsm-terminal -e nmtui"
+  },
+  "cpu": {
+    "interval": 2,
+    "format": "⚙️ {usage}%",
+    "on-click": "uwsm-terminal -e btop"
+  },
+  "memory": {
+    "interval": 5,
+    "format": "🧠 {used}G",
+    "on-click": "uwsm-terminal -e btop"
+  },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "🌡️ {temperatureC}°C"
+  },
+  "pulseaudio": {
+    "format": "🔉 {volume}%",
+    "format-muted": "🔇",
+    "on-click": "pavucontrol"
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "🔆 {percent}%"
+  },
+  "battery": {
+    "states": { "warning": 30, "critical": 15 },
+    "format": "{icon} {capacity}%",
+    "format-charging": "⚡ {capacity}%",
+    "format-icons": ["🪫", "🔋"]
+  },
+  "custom/power": {
+    "format": "🔘",
+    "tooltip": false,
+    "on-click": "uwsm app -- wleave"
+  }
+}

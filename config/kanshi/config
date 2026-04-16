@@ -1,0 +1,13 @@
+profile undocked {
+    output "eDP-1" mode preferred position 0,0 scale 1.25 enable
+}
+
+profile dual {
+    output "HDMI-A-2" mode preferred position 0,0 scale 1.0 enable
+    output "eDP-1" mode preferred position 0,1080 scale 1.25 enable
+}
+
+profile fallback {
+    output "eDP-1" scale 1.25 position 0,0 enable
+    output * enable
+}

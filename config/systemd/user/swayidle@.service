@@ -1,0 +1,20 @@
+[Unit]
+Description=Idle manager for %I Wayland session
+Documentation=man:swayidle(1)
+# 核心修复：确保在合成器主进程启动后再启动
+After=wayland-wm@%i.service
+# 核心修复：确保环境变量注入后再启动
+After=wayland-session@%i.target
+# 跟随会话生命周期
+PartOf=wayland-session@%i.target
+
+[Service]
+Type=simple
+# 注意：%i 通常是 niri.desktop，这里会去读 ~/.config/swayidle/niri.desktop.conf
+ExecStart=/usr/bin/swayidle -w -C %h/.config/swayidle/%i.conf
+Restart=on-failure
+RestartSec=3s
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=wayland-session@%i.target

@@ -1,0 +1,16 @@
+[Unit]
+Description=Udiskie for %i session
+Documentation=man:udiskie(8)
+After=wayland-wm@%i.service
+After=wayland-session@%i.target
+PartOf=wayland-session@%i.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/udiskie -a -s
+Restart=on-failure
+RestartSec=3s
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=wayland-session@%i.target

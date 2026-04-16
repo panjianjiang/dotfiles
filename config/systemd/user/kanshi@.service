@@ -1,0 +1,20 @@
+[Unit]
+Description=Kanshi output profile daemon for %i session
+Documentation=man:kanshi(1)
+# 核心加固：等待合成器完全启动
+After=wayland-wm@%i.service
+# 核心加固：等待环境变量注入
+After=wayland-session@%i.target
+# 生命周期绑定
+PartOf=wayland-session@%i.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kanshi
+# 针对 Wayland 服务，如果失败了有序重启
+Restart=on-failure
+RestartSec=3s
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=wayland-session@%i.target

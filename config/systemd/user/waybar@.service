@@ -1,0 +1,21 @@
+[Unit]
+Description=Waybar for %i session
+Documentation=man:waybar(1)
+# 确保在合成器主进程启动后再启动
+After=wayland-wm@%i.service
+# 确保在 uwsm 注入环境变量后再启动
+After=wayland-session@%i.target
+# 跟随会话生命周期
+PartOf=wayland-session@%i.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/waybar -c %h/.config/waybar/%i.jsonc
+# 防止频繁启动熔断，间隔稍微拉开一点
+Restart=on-failure
+RestartSec=3s
+# 增加启动宽限
+StartLimitIntervalSec=0
+
+[Install]
+WantedBy=wayland-session@%i.target

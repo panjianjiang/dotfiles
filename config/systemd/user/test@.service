@@ -1,0 +1,10 @@
+[Unit]
+Description=Test service for %i and %I
+
+[Service]
+ExecStart=/bin/bash -c 'echo "Instance name (%%i): %i" && echo "Uppercase instance name (%%I): %I"'
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
