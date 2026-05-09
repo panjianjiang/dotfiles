@@ -1,5 +1,6 @@
 clash-verge-rev-bin
 dingtalk-bin
+eww
 librewolf-bin
 ossutil
 powershell-lts-bin
@@ -10,6 +11,4 @@ ttf-ms-fonts
 ttf-vista-fonts
 wechat-universal-bwrap
 wleave
-wps-office-cn
-wps-office-mime-cn
 yay-bin

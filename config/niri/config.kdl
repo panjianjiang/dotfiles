@@ -271,6 +271,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"
+    spawn-at-startup "xpad"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -350,6 +351,11 @@ window-rule {
 window-rule {
   geometry-corner-radius 0
   clip-to-geometry true
+}
+
+window-rule {
+    match app-id="xpad"
+    open-floating true
 }
 
 binds {
@@ -598,7 +604,7 @@ binds {
   Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
   // The quit action will show a confirmation dialog to avoid accidental exits.
-  Mod+Shift+E { quit; }
+  Mod+Shift+E { spawn "wleave"; }
   Ctrl+Alt+Delete { quit; }
 
   // Powers off the monitors. To turn them back on, do any input like

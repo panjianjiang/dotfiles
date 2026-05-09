@@ -38,14 +38,6 @@ if [ -d "$FNM_PATH" ]; then
   eval "$(fnm env --shell bash)"
 fi
 
-
-# BEGIN opam configuration
-# This is useful if you're using opam as it adds:
-#   - the correct directories to the PATH
-#   - auto-completion for the opam binary
-# This section can be safely removed at any time if needed.
-test -r '/home/panjj/.opam/opam-init/init.sh' && . '/home/panjj/.opam/opam-init/init.sh' > /dev/null 2> /dev/null || true
-# END opam configuration
 export PATH="$HOME/.local/bin:$PATH"
 # 强制开启 ls 颜色
 # 如果是 Linux (GNU ls)

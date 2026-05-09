@@ -13,49 +13,41 @@
   },
   "tray": { "icon-size": 17, "spacing": 4 },
   "clock": {
-    "format": "🕑 {:%Y-%m-%d %H:%M}",
-    "format-alt": "📅 {:%a}  {:%H:%M:%S}",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
-  },
-  "network": {
-    "format-wifi": "🛜 {essid}",
-    "format-ethernet": "🔗 {ipaddr}/{cidr}",
-    "format-disconnected": "🚫 网络断开",
-    "interval": 5,
-    "on-click": "uwsm-terminal -e nmtui"
+    "locale": "zh_CN.UTF-8",
+    "format": "󰥔 {:%Y-%m-%d %H:%M}",
+    "format-alt": "󰃭 {:%a}  {:%H:%M:%S}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "gsimplecal"
   },
   "cpu": {
     "interval": 2,
-    "format": "⚙️ {usage}%",
-    "on-click": "uwsm-terminal -e btop"
+    "format": " {usage}%"
   },
   "memory": {
     "interval": 5,
-    "format": "🧠 {used}G",
-    "on-click": "uwsm-terminal -e btop"
+    "format": " {used}G"
   },
   "temperature": {
     "critical-threshold": 80,
-    "format": "🌡️ {temperatureC}°C"
+    "format": " {temperatureC}°C"
   },
   "pulseaudio": {
-    "format": "🔉 {volume}%",
-    "format-muted": "🔇",
-    "on-click": "pavucontrol"
+    "format": " {volume}%",
+    "format-muted": "󰖁"
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "🔆 {percent}%"
+    "format": "󰃠 {percent}%"
   },
   "battery": {
     "states": { "warning": 30, "critical": 15 },
     "format": "{icon} {capacity}%",
-    "format-charging": "⚡ {capacity}%",
-    "format-icons": ["🪫", "🔋"]
+    "format-charging": "󰂄 {capacity}%",
+    "format-icons": ["󰁺", "󰁾", "󰂂"]
   },
   "custom/power": {
-    "format": "🔘",
+    "format": "⏻",
     "tooltip": false,
-    "on-click": "uwsm app -- wleave"
+    "on-click": "wleave"
   }
 }

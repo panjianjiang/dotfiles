@@ -13,7 +13,6 @@
   "modules-right": [
     "backlight", 
     "pulseaudio", 
-    "network", 
     "cpu", 
     "memory", 
     "temperature", 

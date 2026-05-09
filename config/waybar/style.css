@@ -4,8 +4,9 @@
 
 /* --- B. 全局基础样式 --- */
 * {
-    font-family: "Segoe UI Variable", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    font-family: "Symbols Nerd Font", "Symbols Nerd Font Mono", "Segoe UI Variable", "Microsoft YaHei UI", "Noto Sans CJK SC", sans-serif;
     font-weight: 600;
+    font-size: 13px;
     border: none;
     border-radius: 0;
 }
@@ -19,7 +20,7 @@ window#waybar {
 }
 
 /* --- C. 修改点 1：通用模块样式（已剔除 #window） --- */
-#clock, #backlight, #pulseaudio, #network, #cpu, #memory, 
+#clock, #backlight, #pulseaudio, #bluetooth, #cpu, #memory, 
 #temperature, #battery, #tray, #mode, #scratchpad, #custom-power {
     padding: 2px 10px;
     margin: 4px 2px;
@@ -51,7 +52,7 @@ window#waybar.empty #window label {
 }
 
 /* --- E. 其他不相关的模块细调 --- */
-#tray > widget { margin: 0 5px; }
+#tray > widget { margin: 0 4px; }
 #tray image { padding: 0; margin: 0; }
 
 #workspaces {
@@ -78,7 +79,7 @@ window#waybar.empty #window label {
 #clock { color: #f5c2e7; }
 #backlight { color: #f9e2af; }
 #pulseaudio { color: #a6e3a1; }
-#network { color: #89b4fa; }
+#bluetooth { color: #8bd5ca; }
 #cpu { color: #84f9f4; }
 #memory { color: #cba6f7; }
 #temperature { color: #fab387; }
@@ -87,8 +88,7 @@ window#waybar.empty #window label {
     color: #f38ba8;
 }
 
-#clock:hover, #backlight:hover, #pulseaudio:hover, #network:hover,
-#cpu:hover, #memory:hover, #temperature:hover, #battery:hover, 
+#clock:hover, #backlight:hover, #pulseaudio:hover, #bluetooth:hover, #cpu:hover, #memory:hover, #temperature:hover, #battery:hover, 
 #custom-power:hover, #tray:hover {
     background: rgba(255, 255, 255, 0.15);
 }
@@ -100,4 +100,17 @@ window#waybar.empty #window label {
 
 @keyframes blink {
     to { background: rgba(243, 139, 168, 0.1); }
+}
+
+
+/* --- Calendar Tooltip Styling --- */
+tooltip {
+    background: rgba(22, 26, 33, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+tooltip label {
+    font-family: "JetBrainsMono Nerd Font Mono";
+    font-size: 14px;
 }
