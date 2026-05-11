@@ -41,7 +41,10 @@
   },
   "battery": {
     "states": { "warning": 30, "critical": 15 },
+    "full-at": 100,
     "format": "{icon} {capacity}%",
+    "format-full": "󰁹 {capacity}%",
+    "format-plugged": "{icon} {capacity}%",
     "format-charging": "󰂄 {capacity}%",
     "format-icons": ["󰁺", "󰁾", "󰂂"]
   },
